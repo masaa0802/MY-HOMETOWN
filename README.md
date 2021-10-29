@@ -48,8 +48,7 @@ ER図：</br>
 アプリケーション詳細設計：
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
-
+https://docs.google.com/spreadsheets/d/1ctI7Af_XcCbS_M9vXleGPfRtU0RDDXQz9LAJXy36Evw/edit?usp=sharing
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
