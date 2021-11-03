@@ -43,9 +43,13 @@ MY HOMETOWN
 ・海外のあまり知られていない場所を知りたい時。</br>
 
 ## 設計書
-ER図：</br>
-テーブル定義書：</br>
-アプリケーション詳細設計：
+ワイヤーフレーム:https://app.diagrams.net/#G1eMP6NzGvX6OqSoBJe3m9yrBCk7GVa2wp</br>
+
+ER図:https://app.diagrams.net/#G1WnEAZXebPV9clN-kyGX3ZHIXOTFCTXfZ</br>
+
+テーブル定義書:https://docs.google.com/spreadsheets/d/14zZ2KR0954dcsXkBuWh_6bJNYx8bNAnDSHZJd1QJbz8/edit#gid=296915750</br>
+
+アプリケーション詳細設計:https://docs.google.com/spreadsheets/d/1Tz_5GSC7UdH4M24e7OhCVH-_52SW-iJFLVLEuqP8C-0/edit#gid=2133469642
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ctI7Af_XcCbS_M9vXleGPfRtU0RDDXQz9LAJXy36Evw/edit?usp=sharing
