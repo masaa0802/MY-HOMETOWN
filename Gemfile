@@ -69,3 +69,4 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem "carrierwave"
 gem 'rmagick'
+gem 'mini_magick'
