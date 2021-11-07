@@ -4840,3 +4840,471 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToUsers (20211107031429)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107031429"]]
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddCaptionToUsers (20211107031525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107031525"]]
+  ↳ bin/rails:9
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToPosts (20211107031807)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107031807"]]
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddCaptionToPosts (20211107031911)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107031911"]]
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddImageToHomes (20211107071141)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107071141"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTops (20211107100100)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20211107100100_create_tops.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tops" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "video_top" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20211107100100_create_tops.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107100100"]]
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateActiveStorageTables (20211107153906)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20211107153906_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  ↳ db/migrate/20211107153906_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20211107153906_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  ↳ db/migrate/20211107153906_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20211107153906_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107153906"]]
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 175.177.42.18 at 2021-11-07 15:47:00 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.6) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 175.177.42.18 at 2021-11-07 15:47:01 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.6) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateVideos (20211107154018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20211107154018_create_videos.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "videos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "caption" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20211107154018_create_videos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211107154018"]]
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 175.177.42.18 at 2021-11-07 15:47:18 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+Started GET "/" for 175.177.42.18 at 2021-11-07 15:47:19 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (5805.5ms)
+Completed 200 OK in 6496ms (Views: 6483.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (5292.2ms)
+Completed 500 Internal Server Error in 5302ms (ActiveRecord: 12.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `image?' for nil:NilClass):
+     6:          <% if user_signed_in? %>
+     7:         <ul class="nav navbar navbar-expand-lg navbar-light text-light navbar-nav ml-auto">
+     8:         <%= form_with model:@user, local:true do |f| %>
+     9:              <% if @user.image? %>
+    10:                <div class="m-3"><%= image_tag @user.image.thumb.url,size: "40", class: "user-icon" %></div>
+    11:              <% else %>
+    12:                <%= image_tag "default.jpg", alt: "user-icon", size: "50", class: "user-icon" %>
+  
+app/views/layouts/_header.html.erb:9:in `block in _app_views_layouts__header_html_erb__2603907589819197216_69903255507280'
+app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb__2603907589819197216_69903255507280'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___4324695149490772591_69903255438420'
+Started GET "/videos/new" for 175.177.42.18 at 2021-11-07 15:48:09 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#new as HTML
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/new.html.erb within layouts/application (23.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (8.8ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `image?' for nil:NilClass):
+     6:          <% if user_signed_in? %>
+     7:         <ul class="nav navbar navbar-expand-lg navbar-light text-light navbar-nav ml-auto">
+     8:         <%= form_with model:@user, local:true do |f| %>
+     9:              <% if @user.image? %>
+    10:                <div class="m-3"><%= image_tag @user.image.thumb.url,size: "40", class: "user-icon" %></div>
+    11:              <% else %>
+    12:                <%= image_tag "default.jpg", alt: "user-icon", size: "50", class: "user-icon" %>
+  
+app/views/layouts/_header.html.erb:9:in `block in _app_views_layouts__header_html_erb__2603907589819197216_69903255162720'
+app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb__2603907589819197216_69903255162720'
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___4324695149490772591_69903254985440'
+Started GET "/videos/new" for 175.177.42.18 at 2021-11-07 15:48:35 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#new as HTML
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (5.8ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/videos" for 175.177.42.18 at 2021-11-07 15:48:48 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cmx6pphZAzoFrEWjnDQ61LbUjgWgnCOhnpZJxKGA5+sweRUB9MK48rdQ+wv0EzPIwXnu92VWpyo9hyR03lY+xg==", "video"=>{"title"=>"affas", "caption"=>"saas", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f274485ae18 @tempfile=#<Tempfile:/tmp/RackMultipart20211107-11407-7gksef.mp4>, @original_filename="Dubrovnik - 12866.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"Dubrovnik - 12866.mp4\"\r\nContent-Type: video/mp4\r\n">}, "commit"=>"Create Video"}
+[36m  Disk Storage (14.8ms) [0m[32mUploaded file to key: UswWoHqciCxQ9kDuHwbuma35 (checksum: 5FjAClqHvFUh8e7RJIxwqg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[36mActiveStorage::Blob Create (2.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "UswWoHqciCxQ9kDuHwbuma35"], ["filename", "Dubrovnik - 12866.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 2159677], ["checksum", "5FjAClqHvFUh8e7RJIxwqg=="], ["created_at", "2021-11-07 15:48:48.709413"]]
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 10.9ms)
+
+
+  
+NoMethodError (undefined method `create' for #<Video:0x00007f274485d1b8>
+Did you mean?  created_at):
+  
+app/controllers/videos_controller.rb:8:in `create'
+Started POST "/videos" for 175.177.42.18 at 2021-11-07 15:50:05 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cmx6pphZAzoFrEWjnDQ61LbUjgWgnCOhnpZJxKGA5+sweRUB9MK48rdQ+wv0EzPIwXnu92VWpyo9hyR03lY+xg==", "video"=>{"title"=>"affas", "caption"=>"saas", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f273d5542c0 @tempfile=#<Tempfile:/tmp/RackMultipart20211107-11407-1c6g8nn.mp4>, @original_filename="Dubrovnik - 12866.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"Dubrovnik - 12866.mp4\"\r\nContent-Type: video/mp4\r\n">}, "commit"=>"Create Video"}
+[36m  Disk Storage (12.7ms) [0m[32mUploaded file to key: uuZwYhB21eoqEZvJ4A9Yu3c2 (checksum: 5FjAClqHvFUh8e7RJIxwqg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[36mActiveStorage::Blob Create (3.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "uuZwYhB21eoqEZvJ4A9Yu3c2"], ["filename", "Dubrovnik - 12866.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 2159677], ["checksum", "5FjAClqHvFUh8e7RJIxwqg=="], ["created_at", "2021-11-07 15:50:05.780082"]]
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[36mVideo Create (1.5ms)[0m  [1m[32mINSERT INTO "videos" ("title", "caption", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "affas"], ["caption", "saas"], ["created_at", "2021-11-07 15:50:05.804353"], ["updated_at", "2021-11-07 15:50:05.804353"]]
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 1], ["blob_id", 2], ["created_at", "2021-11-07 15:50:05.808247"]]
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[36mVideo Update (0.2ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = ? WHERE "videos"."id" = ?[0m  [["updated_at", "2021-11-07 15:50:05.810511"], ["id", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:8
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d41172c6-c867-409d-a0e9-508561930b2a) to Async(default) with arguments: #<GlobalID:0x00007f273db1ec50 @uri=#<URI::GID gid://my-hometown/ActiveStorage::Blob/2>>
+Redirected to https://75f555c691a44c08bdc3980d2c15e2b9.vfs.cloud9.us-east-1.amazonaws.com/videos/1
+Completed 302 Found in 129ms (ActiveRecord: 17.4ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a] Performing ActiveStorage::AnalyzeJob (Job ID: d41172c6-c867-409d-a0e9-508561930b2a) from Async(default) with arguments: #<GlobalID:0x00007f274498f428 @uri=#<URI::GID gid://my-hometown/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a] [36m  Disk Storage (2.1ms) [0m[34mDownloaded file from key: uuZwYhB21eoqEZvJ4A9Yu3c2[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a]   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a]   [1m[36mActiveStorage::Blob Update (2.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a]   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a]   [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a]   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d41172c6-c867-409d-a0e9-508561930b2a] Performed ActiveStorage::AnalyzeJob (Job ID: d41172c6-c867-409d-a0e9-508561930b2a) from Async(default) in 18.04ms
+Started GET "/videos/1" for 175.177.42.18 at 2021-11-07 15:50:06 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:13
+  Rendering videos/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/videos/show.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/videos/show.html.erb:1
+  Rendered videos/show.html.erb within layouts/application (35.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (20.1ms)
+Completed 200 OK in 162ms (Views: 148.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5df089accf99adac22a3364a378df51be5b5442/Dubrovnik%20-%2012866.mp4" for 175.177.42.18 at 2021-11-07 15:50:06 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5df089accf99adac22a3364a378df51be5b5442", "filename"=>"Dubrovnik - 12866"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (3.1ms) [0m[34mGenerated URL for file at key: uuZwYhB21eoqEZvJ4A9Yu3c2 (https://75f555c691a44c08bdc3980d2c15e2b9.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkWFZhZDFsb1FqSXhaVzl4UlZwMlNqUkJPVmwxTTJNeUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmRZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SWtSMVluSnZkbTVwYXlBdElERXlPRFkyTG0xd05DSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SSFZpY205MmJtbHJKVEl3TFNVeU1ERXlPRFkyTG0xd05BWTdCa1k2RVdOdmJuUmxiblJmZEhsd1pVa2lEblpwWkdWdkwyMXdOQVk3QmxRPSIsImV4cCI6IjIwMjEtMTEtMDdUMTU6NTU6MDYuNjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--860c0269d3d630c41833ef8bcd76598cebb88e93/Dubrovnik%20-%2012866.mp4?content_type=video%2Fmp4&disposition=attachment%3B+filename%3D%22Dubrovnik+-+12866.mp4%22%3B+filename%2A%3DUTF-8%27%27Dubrovnik%2520-%252012866.mp4)[0m
+Redirected to https://75f555c691a44c08bdc3980d2c15e2b9.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkWFZhZDFsb1FqSXhaVzl4UlZwMlNqUkJPVmwxTTJNeUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmRZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SWtSMVluSnZkbTVwYXlBdElERXlPRFkyTG0xd05DSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SSFZpY205MmJtbHJKVEl3TFNVeU1ERXlPRFkyTG0xd05BWTdCa1k2RVdOdmJuUmxiblJmZEhsd1pVa2lEblpwWkdWdkwyMXdOQVk3QmxRPSIsImV4cCI6IjIwMjEtMTEtMDdUMTU6NTU6MDYuNjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--860c0269d3d630c41833ef8bcd76598cebb88e93/Dubrovnik%20-%2012866.mp4?content_type=video%2Fmp4&disposition=attachment%3B+filename%3D%22Dubrovnik+-+12866.mp4%22%3B+filename%2A%3DUTF-8%27%27Dubrovnik%2520-%252012866.mp4
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkWFZhZDFsb1FqSXhaVzl4UlZwMlNqUkJPVmwxTTJNeUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmRZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SWtSMVluSnZkbTVwYXlBdElERXlPRFkyTG0xd05DSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SSFZpY205MmJtbHJKVEl3TFNVeU1ERXlPRFkyTG0xd05BWTdCa1k2RVdOdmJuUmxiblJmZEhsd1pVa2lEblpwWkdWdkwyMXdOQVk3QmxRPSIsImV4cCI6IjIwMjEtMTEtMDdUMTU6NTU6MDYuNjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--860c0269d3d630c41833ef8bcd76598cebb88e93/Dubrovnik%20-%2012866.mp4?content_type=video%2Fmp4&disposition=attachment%3B+filename%3D%22Dubrovnik+-+12866.mp4%22%3B+filename%2A%3DUTF-8%27%27Dubrovnik%2520-%252012866.mp4" for 175.177.42.18 at 2021-11-07 15:50:06 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as MP4
+  Parameters: {"content_type"=>"video/mp4", "disposition"=>"attachment; filename=\"Dubrovnik - 12866.mp4\"; filename*=UTF-8''Dubrovnik%20-%2012866.mp4", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkWFZhZDFsb1FqSXhaVzl4UlZwMlNqUkJPVmwxTTJNeUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmRZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SWtSMVluSnZkbTVwYXlBdElERXlPRFkyTG0xd05DSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SSFZpY205MmJtbHJKVEl3TFNVeU1ERXlPRFkyTG0xd05BWTdCa1k2RVdOdmJuUmxiblJmZEhsd1pVa2lEblpwWkdWdkwyMXdOQVk3QmxRPSIsImV4cCI6IjIwMjEtMTEtMDdUMTU6NTU6MDYuNjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--860c0269d3d630c41833ef8bcd76598cebb88e93", "filename"=>"Dubrovnik - 12866"}
+Completed 206 Partial Content in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkWFZhZDFsb1FqSXhaVzl4UlZwMlNqUkJPVmwxTTJNeUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmRZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SWtSMVluSnZkbTVwYXlBdElERXlPRFkyTG0xd05DSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SSFZpY205MmJtbHJKVEl3TFNVeU1ERXlPRFkyTG0xd05BWTdCa1k2RVdOdmJuUmxiblJmZEhsd1pVa2lEblpwWkdWdkwyMXdOQVk3QmxRPSIsImV4cCI6IjIwMjEtMTEtMDdUMTU6NTU6MDYuNjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--860c0269d3d630c41833ef8bcd76598cebb88e93/Dubrovnik%20-%2012866.mp4?content_type=video%2Fmp4&disposition=attachment%3B+filename%3D%22Dubrovnik+-+12866.mp4%22%3B+filename%2A%3DUTF-8%27%27Dubrovnik%2520-%252012866.mp4" for 175.177.42.18 at 2021-11-07 15:50:10 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as MP4
+  Parameters: {"content_type"=>"video/mp4", "disposition"=>"attachment; filename=\"Dubrovnik - 12866.mp4\"; filename*=UTF-8''Dubrovnik%20-%2012866.mp4", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkWFZhZDFsb1FqSXhaVzl4UlZwMlNqUkJPVmwxTTJNeUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmRZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SWtSMVluSnZkbTVwYXlBdElERXlPRFkyTG0xd05DSTdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SSFZpY205MmJtbHJKVEl3TFNVeU1ERXlPRFkyTG0xd05BWTdCa1k2RVdOdmJuUmxiblJmZEhsd1pVa2lEblpwWkdWdkwyMXdOQVk3QmxRPSIsImV4cCI6IjIwMjEtMTEtMDdUMTU6NTU6MDYuNjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--860c0269d3d630c41833ef8bcd76598cebb88e93", "filename"=>"Dubrovnik - 12866"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 175.177.42.18 at 2021-11-07 15:57:04 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.0ms)
+Started GET "/" for 175.177.42.18 at 2021-11-07 15:57:06 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (3287.1ms)
+Completed 200 OK in 3964ms (Views: 3957.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (2851.8ms)
+Completed 200 OK in 2942ms (Views: 2936.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/videos" for 175.177.42.18 at 2021-11-07 15:57:31 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for VideosController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/videos/new" for 175.177.42.18 at 2021-11-07 15:57:39 +0000
+Cannot render console from 175.177.42.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by VideosController#new as HTML
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/new.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (11.6ms)
+Completed 200 OK in 105ms (Views: 95.4ms | ActiveRecord: 0.7ms)
+
+

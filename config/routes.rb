@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videos
   get 'posts/index'
   get 'posts/show'
   get 'posts/edit'

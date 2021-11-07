@@ -5,13 +5,6 @@
         <ul class="nav navbar navbar-expand-lg navbar-light text-light navbar-nav ml-auto">
          <% if user_signed_in? %>
         <ul class="nav navbar navbar-expand-lg navbar-light text-light navbar-nav ml-auto">
-        <%= form_with model:@user, local:true do |f| %>
-             <% if @user.image? %>
-               <div class="m-3"><%= image_tag @user.image.thumb.url,size: "40", class: "user-icon" %></div>
-             <% else %>
-               <%= image_tag "default.jpg", alt: "user-icon", size: "50", class: "user-icon" %>
-             <% end %>
-        <% end %>
             <li><%= link_to 'My page', user_path(current_user), class:'btn btn-outline-dark m-3' %></li>
             <li><%= link_to '投稿一覧', class:'btn btn-outline-dark m-3' %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
