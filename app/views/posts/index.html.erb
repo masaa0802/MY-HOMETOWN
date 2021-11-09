@@ -1,2 +1,4 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% if @post.video.attached? %>
+  <p><%= @post.caption %></p>
+  <%= video_tag rails_blob_path(@post.video) %>
+<% end %>

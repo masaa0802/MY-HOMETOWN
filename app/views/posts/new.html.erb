@@ -1,0 +1,5 @@
+<%= form_with model: @post do |form| %>
+  <p>introduction</p><%= form.text_area :caption %> <br>
+  <p>video</p><%= form.file_field :video %> <br>
+  <%= form.submit %>
+<% end %>
