@@ -1,0 +1,12 @@
+<div class="container flex-column">
+　<div class="row my-3">
+    <div class="col-12 text-center mb-3">
+    <p><strong>本当に退会しますか</strong></p>
+    <p>退会すると、会員登録情報や</br>
+    これまでの投稿が閲覧できなくなります。</br>
+    退会する場合は、「退会する」をクリックしてください。</p>
+    <%= link_to '退会しない',user_path(@user.id),class: "btn btn-primary" %>
+    <%= link_to "退会する",withdraw_user_path(@user.id), method: :patch,class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

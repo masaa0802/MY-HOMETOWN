@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-     @post= Post.find(params[:id])
+     @posts= Post.all
   end
 
   def show
@@ -11,18 +11,18 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post=Post.new
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.create
-    redirect_to @post
+    @post = Post.new
+    @post.save!
+    redirect_to posts_path
   end
 
   def destroy
   end
-  
+
   def post_params
     params.require(:post).permit(:caption, :video)
   end

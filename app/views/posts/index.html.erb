@@ -1,4 +1,0 @@
-<% if @post.video.attached? %>
-  <p><%= @post.caption %></p>
-  <%= video_tag rails_blob_path(@post.video) %>
-<% end %>

@@ -1,14 +1,37 @@
- <%= form_with model:@user, local:true do |f| %>
- 
-  <% if @user.image? %>
-    <%= image_tag @user.image.thumb.url, class: "user-icon" %>
-  <% else %>
-    <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
-  <% end %>
-  <button type="button" class="btn btn-outline-secondary rounded-pill">
-    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
-  </button>
-  <%= f.submit '更新する', class: 'btn btn-primary' %>
- 
-<% end %>
- 
+ <div class="container">
+    <div class="row py-5">
+      <div class="col-12" style="height: 500px">
+         <%= form_with model: @user, local:true do |f| %>
+
+          <% if @user.image? %>
+            <%= image_tag @user.image.thumb.url, class: "user-icon" %>
+          <% else %>
+            <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+          <% end %>
+          <button type="button" class="btn btn-outline-secondary rounded-pill">
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
+          </button>
+          <%= f.submit '更新する', class: 'btn btn-primary' %>
+
+          <div class="form-group mt-4">
+            <%= f.label :'氏名', class:"col-2 label_text" %>
+            <%= f.text_field :name, class:"mr-3" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :'メールアドレス', class:"col-2 label_text" %>
+            <%= f.text_field :email %>
+          </div>
+          <div class="d-flex pt-3">
+            <div class="col-2 offset-2">
+              <%= f.button :type => 'submit', class:"btn btn-md btn-success shadow " do %>
+                <i class="fas fa-user-edit"></i>編集内容を保存
+              <% end %>
+            </div>
+            <div class="col-2">
+              <%= link_to '退会する', confirm_unsubscribe_path(@user.id), class: "btn btn-md btn-danger" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,11 @@
-<%= form_with model: @post do |form| %>
-  <p>introduction</p><%= form.text_area :caption %> <br>
-  <p>video</p><%= form.file_field :video %> <br>
-  <%= form.submit %>
+<%= form_with model: @post, local: true do |f| %>
+<div class="field">
+  <%= f.label :video %>
+  <%= f.file_field :video, :accept => 'video/*' %>
+</div>
+
+<div class="#">
+  <%= f.submit "作成する" ,class:"#" %>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
 <% end %>
