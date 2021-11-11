@@ -70,3 +70,9 @@ gem 'font-awesome-sass', '~> 5.13'
 gem "carrierwave"
 gem 'rmagick'
 gem 'mini_magick'
+
+#本番環境でMySQLを利用するための設定
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
