@@ -1,11 +1,20 @@
-<%= form_with model: @post, local: true do |f| %>
-<div class="field">
-  <%= f.label :video %>
-  <%= f.file_field :video, :accept => 'video/*' %>
+ <div class="container">
+    <div class="row py-5">
+      <div class="col-12" style="height: 500px">
+      <%= form_with model: @post, local: true do |f| %>
+      <div class="field mb-3">
+        <label>動画・画像のアップロード</label></br>
+        <%= f.file_field :video, :accept => 'video/*' %>
+      </div>
+      <div class="field1 mb-3">
+       <label>説明</label></br>
+        <%= f.text_area :caption, size: "40x5" %>
+      </div>
+      
+      <div class="#">
+        <%= f.submit "作成する" ,class:"#" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<div class="#">
-  <%= f.submit "作成する" ,class:"#" %>
-  <%=link_to 'もどる', root_path, class:"back-btn" %>
-</div>
-<% end %>

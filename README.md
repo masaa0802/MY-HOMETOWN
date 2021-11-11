@@ -61,5 +61,5 @@ https://docs.google.com/spreadsheets/d/1ctI7Af_XcCbS_M9vXleGPfRtU0RDDXQz9LAJXy36
 - IDE：Cloud9
 
 ## 使用素材
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
+-画像素材：https://www.photo-ac.com/
+-動画素材：https://www.pexels.com/ja-jp/
