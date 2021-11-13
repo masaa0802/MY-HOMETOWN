@@ -34,8 +34,3 @@ production:
   host: <%= ENV['DB_HOST','rds-mysql-server.cxzcytovhlig.us-east-1.rds.amazonaws.com'] %>
   username: <%= ENV['DB_USERNAME','root'] %>
   password: <%= ENV['DB_PASSWORD','Tatakomaki0802'] %>
-  
-  DB_USERNAME= 
-DB_PASSWORD= 
-DB_HOST=  
-DB_DATABASE= "アプリケーション名"
