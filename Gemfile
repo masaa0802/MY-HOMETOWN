@@ -68,11 +68,11 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem "carrierwave"
-gem 'rmagick'
+gem 'rmagick','~> 4.2.3'
 gem 'mini_magick'
 
 #本番環境でMySQLを利用するための設定
 gem 'dotenv-rails'
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.5.3'
 end
