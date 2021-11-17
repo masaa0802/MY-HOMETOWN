@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_150755) do
+ActiveRecord::Schema.define(version: 2021_11_17_104413) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,11 +41,6 @@ ActiveRecord::Schema.define(version: 2021_11_10_150755) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
@@ -63,37 +58,32 @@ ActiveRecord::Schema.define(version: 2021_11_10_150755) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
     t.string "video"
   end
 
-  create_table "tops", force: :cascade do |t|
-    t.string "video_top"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "postalcode"
-    t.string "address"
-    t.string "telephone"
-    t.string "image"
+    t.integer "user_id"
+    t.text "caption"
     t.boolean "is_valid"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "title"
     t.text "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

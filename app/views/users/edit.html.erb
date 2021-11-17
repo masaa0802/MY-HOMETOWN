@@ -6,7 +6,7 @@
           <% if @user.image? %>
             <%= image_tag @user.image.thumb.url, class: "user-icon" %>
           <% else %>
-            <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+            <%= image_tag "default.jpg", alt: "user-icon", size: "150", class: "user-icon" %>
           <% end %>
           <button type="button" class="btn btn-outline-secondary rounded-pill">
             <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
@@ -22,12 +22,12 @@
             <%= f.text_field :email %>
           </div>
           <div class="d-flex pt-3">
-            <div class="col-2 offset-2">
+            <div class="col-3">
               <%= f.button :type => 'submit', class:"btn btn-md btn-success shadow " do %>
                 <i class="fas fa-user-edit"></i>編集内容を保存
               <% end %>
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <%= link_to '退会する', confirm_unsubscribe_path(@user.id), class: "btn btn-md btn-danger" %>
             </div>
           </div>

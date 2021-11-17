@@ -14,25 +14,23 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+background-color:#343a4014;
+}
+
+//トップページレイアウト
+.image-container{
+  height: 700px;
+  width: 100%;
+}
 
 .theTarget{
   height:100%;
   width:100%;
 }
-.navbar{
-  background-color:#343a4014;
-  height: 160px;
-}
-
-li {
-  list-style: none;
-}
-
-.image-container{
-  height: 600px;
-  width: 100%;
-}
-
 .image1 {
   background-image: url("image.1.jpg");
   height:100%;
@@ -57,5 +55,68 @@ li {
   background-image: url(image.5.jpg);
   height:100%;
   width:100%;
+}
+//ヘッダーレイアウト
+.navbar{
+  height: 160px;
+}
+li {
+  list-style: none;
+}
+.container1{
+  position:relative;
+}
+// mapsレイアウト
+.row1 {
+  position: absolute;
+  right:0;
+}
+.col1 {
+  padding-right:0;
+}
+
+// 新規投稿レイアウト
+.row2 {
+  position: absolute;
+  left: 20px;
+}
+#wrapper {
+  height: 750px;
+  width: 600px;
+  overflow-y: scroll;
+}
+.col2 {
+  padding-left: 20px;
+}
+.box {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  margin-top: 30px;
+  margin-left: 40px;
+  width: 450px;
+  height: 400px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.57));
+}
+.likebuttons {
+  margin-left: 25px;
+}
+
+//videoレイアウト
+.video_wrapper {
+    position: relative;
+    width:400px;
+    height:300px;
+    overflow: hidden;
+    margin-left: 25px;
+}
+
+.video_wrapper > video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 

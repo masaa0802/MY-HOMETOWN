@@ -1,6 +1,16 @@
 class PostsController < ApplicationController
+  
   def index
-     @posts= Post.all
+    @posts= Post.all
+  end
+  def new
+    @post= Post.new
+  end
+
+  def create
+    post= Post.new(post_params)
+    post.save
+    redirect_to posts_path
   end
 
   def show
@@ -10,15 +20,6 @@ class PostsController < ApplicationController
   def edit
   end
 
-  def new
-    @post=Post.new
-  end
-
-  def create
-    @post = Post.new(post_params)
-    @post.save!
-    redirect_to posts_path
-  end
 
   def destroy
   end
