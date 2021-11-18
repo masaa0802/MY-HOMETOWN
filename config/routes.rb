@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     patch 'users/:id/withdraw/' => 'users#withdraw', as: 'withdraw_user'
     put 'withdraw/:id' => 'customers#withdraw'
 
-  resources :posts
-
-  resources :maps,only: [:index]
-  resources :likes,only: [:create, :destroy]
+  resources :posts do
+    resources :maps,only: [:index]
+    resources :likes,only: [:create, :destroy]
+    resources :comments,only: [:update, :destroy]
+  end
 end
 

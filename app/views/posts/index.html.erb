@@ -11,6 +11,10 @@
       <%= render 'videos/video', posts: posts %>
       <div class="likebuttons" id="like_buttons_<%= posts.id %>">
       <%= render 'likes/likes', posts: posts %>
+      <span data-comment-id=<%= posts.id %> class="js-edit-comment-button">
+        <i class="fas fa-edit text-primary"></i>
+      </span>
+      <%= render 'comments/comments', posts: posts %>
       </div>
       </div>
       <% end %>
