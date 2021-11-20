@@ -1,9 +1,56 @@
-<div id="js-comment-<%= posts.id %>">
-  <p id="js-comment-label-<%= posts.id %>"><%= posts.caption %></p>
-  <p id="js-comment-post-error-<%= posts.id %>" class="text-danger"></p>
-  <textarea style="display: none;" id="js-textarea-comment-<%= posts.id %>" class="form-control comment-post-error"><%= posts.caption %></textarea>
-  <div id="js-comment-button-<%= posts.id %>" style="display: none;">
-    <button data-cancel-id=<%= posts.id %> type="button" class="btn btn-light comment-cancel-button">キャンセル</button>
-    <button data-update-id=<%= posts.id %> type="submit" class="btn btn-success comment-update-button">更新</button>
+<!--<div id="js-comment-<%= post.id %>">-->
+<!--  <p id="js-comment-label-<%= post.id %>"><%= post.comment %>-->
+
+<!--  <#% end %>-->
+<!--  </p>-->
+<!--  <p id="js-comment-post-error-<%= post.id %>" class="text-danger"></p>-->
+<!--  <textarea style="display: none;" id="js-textarea-comment-<%= post.id %>" class="form-control comment-post-error"><%= post.comment %></textarea>-->
+<!--  <div id="js-comment-button-<%= post.id %>" style="display: none;">-->
+<!--    <button data-cancel-id=<%= post.id %> type="button" class="btn btn-light comment-cancel-button mt-2">キャンセル</button>-->
+<!--    <button data-update-id=<%= post.id %> type="submit" class="btn btn-success comment-update-button mt-2">更新</button>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div>-->
+<!--  <#%= link_to posts_path(post.id), method: :post do %>-->
+<!--    <div id="js-comment-label-<#%= comment.id %>">-->
+<!--      <#%= comment.comment %>-->
+<!--      <span data-comment-id="<#%= comment.id %>" class="js-edit-comment-button">-->
+<!--        <i class="far fa-comment-alt"></i>-->
+<!--      </span>-->
+<!--    </div>-->
+<!--      <div style="display: none;" id="js-textarea-post-<#%= comment.id %>">-->
+<!--      <textarea id="js-textarea-comment-<#%= comment.id %>" class="form-control comment-post-error"><#%= comment.comment %></textarea>-->
+<!--      <button data-cancel-id=<#%= comment.id %> type="button" class="btn btn-light comment-cancel-button mt-2">-->
+<!--        キャンセル-->
+<!--      </button>-->
+<!--      <button data-update-id=<#%= comment.id %> type="submit" class="btn btn-success comment-update-button mt-2">-->
+<!--        投稿-->
+<!--      </button>-->
+<!--    <#% end %>-->
+<!--  </i>-->
+<!--</div>-->
+
+<% post.comments.each do |comment|%>
+  <div>
+    <%= link_to post_path(comment) do %>
+    <div id="js-comment-label-<%= comment.id %>">
+      <%= comment.comment %>
+      <span data-comment-id="<%= comment.id %>" class="js-edit-comment-button">
+        <i class="fas fa-edit text-primary"></i>
+      </span>
+    </div>
+    <% end %>
+    <%= link_to post_path(post.id), method: :delete, remote: true, class: 'js-delete-comment-button', data: {confirm: 'よろしいですか'} do %>
+    <%= icon 'fas', 'trash' %>
+    <% end %>
+    <div style="display: none;" id="js-textarea-<%= comment.id %>">
+      <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control comment-post-error"><%= comment.comment %></textarea>
+      <button data-cancel-id=<%= comment.id %> type="button" class="btn btn-light comment-cancel-button mt-2">
+        キャンセル
+      </button>
+      <button data-update-id=<%= comment.id %> type="submit" class="btn btn-success comment-update-button mt-2">
+        更新
+      </button>
+    </div>
   </div>
-</div>
+<% end %>

@@ -6,4 +6,8 @@ class Post < ApplicationRecord
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
+
+  def like_by(user)
+    likes.find_by(user_id: user.id)
+  end
 end

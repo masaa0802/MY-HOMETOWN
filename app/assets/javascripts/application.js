@@ -10,16 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 
+//= require rails-ujs
 // require jquery
 
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+/* global $ */
 
 $(document).ready(function(){
 // オプションを指定してSkipprの実行
@@ -47,66 +50,77 @@ $(".theTarget").skippr({
 });
 
 });
+// コメント投稿エリア表示
+$(function () {
+  $(document).on("click", ".js--comment-button", function () {
+    const commentId = $(this).data('comment-id');
+    console.log(commentId);
+    $('#js-textarea-post' + commentId).show();
+    $('#js-comment-label-' + commentId).hide();
+  });
+  $(document).on("click", ".comment-cancel-button", function () {
+    const commentId = $(this).data('cancel-id');
+    $('#js-textarea-post-' + commentId).hide();
+    $('#js-comment-label-' + commentId).show();
+  });
+});
 
 // コメント編集エリア表示
 $(function () {
   $(document).on("click", ".js-edit-comment-button", function () {
     const commentId = $(this).data('comment-id');
     console.log(commentId);
-    const commentLabelArea = $('#js-comment-label-' + commentId);
-    const commentTextArea = $('#js-textarea-comment-' + commentId);
-    const commentButton = $('#js-comment-button-' + commentId);
-    commentLabelArea.hide();
-    commentTextArea.show();
-    commentButton.show();
+    $('#js-textarea-' + commentId).show();
+    $('#js-comment-label-' + commentId).hide();
+    //const commentTextArea = $('#js-textarea-comment-' + commentId);
+    //const commentButton = $('#js-comment-button-' + commentId);
+    //commentLabelArea.hide();
+    // commentTextArea.show();
+    // commentButton.show();
   });
-});
 
-$(function () {
   $(document).on("click", ".comment-cancel-button", function () {
     const commentId = $(this).data('cancel-id');
-    const commentLabelArea = $('#js-comment-label-' + commentId);
-    const commentTextArea = $('#js-textarea-comment-' + commentId);
-    const commentButton = $('#js-comment-button-' + commentId);
-    const commentError = $('#js-comment-post-error-' + commentId);
+    $('#js-textarea-' + commentId).hide();
+    $('#js-comment-label-' + commentId).show();
+    // const commentTextArea = $('#js-textarea-comment-' + commentId);
+    // const commentButton = $('#js-comment-button-' + commentId);
+    // const commentError = $('#js-comment-post-error-' + commentId);
 
-    commentLabelArea.show();
-    commentTextArea.hide();
+    /*commentTextArea.hide();
     commentButton.hide();
-    commentError.hide();
+    commentError.hide();*/
   });
-});
 
-// コメント更新ボタン
-$(function () {
+  // コメント更新ボタン
   $(document).on("click", ".comment-update-button", function () {
     const commentId = $(this).data('update-id');
     const textField = $('#js-textarea-comment-' + commentId);
     const body = textField.val();
-  // console.log(body);
 
     $.ajax({
-      url: '/comments/' + commentId,
+      url: `/post/${postId}/comments/${commentId}`,
       type: 'PATCH',
       data: {
         comment: {
-          comment: comment
+          body: body
         }
       }
+    }).done(function (date) {  // ajax通信が成功した時の処理
+      const commentLabelArea = $('#js-comment-label-' + commentId);
+      const commentTextArea = $('#js-textarea-comment-' + commentId);
+      const commentButton = $('#js-comment-button-' + commentId);
+      const commentError = $('#js-comment-post-error-' + commentId);
+
+      commentLabelArea.show();
+      commentLabelArea.text(date.comment);
+      commentTextArea.hide();
+      commentButton.hide();
+      commentError.hide();
+    }).fail(function () {
+      const commentError = $('#js-comment-post-error-' + commentId);
+      commentError.text('コメントを入力してください');
     })
-    // ajax通信が成功した時の処理
-  .done(function (date) {
-    const commentLabelArea = $('#js-comment-label-' + commentId);
-    const commentTextArea = $('#js-textarea-comment-' + commentId);
-    const commentButton = $('#js-comment-button-' + commentId);
-    const commentError = $('#js-comment-post-error-' + commentId); 
-    
-    commentLabelArea.show();
-    commentLabelArea.text(date.comment); 
-    commentTextArea.hide();
-    commentButton.hide();
-    commentError.hide();
-  })
-  
+
   });
 });

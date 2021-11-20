@@ -1,9 +1,16 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[update destroy]
+  before_action :set_comment, only: %i[update destroy create]
   
+  def create
+    @comment.create!
+  end  
   def update
     @comment.update!(comment_update_params)
     render json: @comment
+  end
+  
+  def destroy
+    @comment.destroy!
   end
 
   private
