@@ -1,0 +1,5 @@
+<%= form_with(model: [post, comment], url: item_comments_path(@item) ) do |f| %>
+  <%= f.text_area :comment, size:"90x5" %><br>
+  <%= f.submit '送信'%>
+<% end %>
+

@@ -1,25 +1,27 @@
 <header>
   <nav class='navbar navbar-expand-md border-bottom'>
     <div class="col-3 offset-md-1"><%= link_to image_tag('logo.png', size: "140x140"), root_path %></div>
-    <div class="container">
-      <div class="row offset-md-4" >
+      <div class="container">
         <% if user_signed_in? %>
-            <li><%= link_to new_post_path do %>
-    　       <i class="fas fa-pen-square"> 投稿</i>
-    　  　　　</li>
-        <% end %>
-            <li><%= link_to 'My page', user_path(current_user), class:'btn btn-outline-dark m-3' %></li>
-            <li><%= link_to '投稿一覧', posts_path,class:'btn btn-outline-dark m-3' %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
+          <li><%= link_to new_post_path do %>
+  　         <i class="fas fa-pen-square"> 投稿</i>
+  　  　　　</li>
+              <% end %>
+        <div class="row col-6 offset-md-3" >
+          <li><%= link_to 'My page', user_path(current_user), class:'btn btn-outline-dark m-3' %></li>
+          <li><%= link_to '投稿一覧', posts_path,class:'btn btn-outline-dark m-3' %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
         <% else %>
-            <li><%= link_to '利用方法', about_path, class:'btn btn-outline-dark m-3' %></li>
-            <li><%= link_to 'ログイン', new_user_session_path, class:'btn btn-outline-dark m-3' %></li>
-            <li><%= link_to '新規登録', new_user_registration_path, class:'btn btn-outline-dark m-3' %></li>
+          <li><%= link_to '利用方法', about_path, class:'btn btn-outline-dark m-3' %></li>
+          <li><%= link_to 'ログイン', new_user_session_path, class:'btn btn-outline-dark m-3' %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class:'btn btn-outline-dark m-3' %></li>
         <% end %>
-      <div class='text-light2'>
-　　　  <form id="form2"  method="get">
-　　　　  <input id="sbox2"  id="s" name="s" type="text" placeholder="Search"/>
-　　　　</form>
+        </div>
+        <div class='text-light2'>
+      　　  <form id="form2"  method="get">
+      　　　　  <input id="sbox2"  id="s" name="s" type="text" placeholder="Search"/>
+      　　　</form>
+    　　　</div>
       </div>
     </div>
   </nav>

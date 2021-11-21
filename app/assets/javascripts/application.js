@@ -51,19 +51,21 @@ $(".theTarget").skippr({
 
 });
 // コメント投稿エリア表示
-$(function () {
-  $(document).on("click", ".js--comment-button", function () {
-    const commentId = $(this).data('comment-id');
-    console.log(commentId);
-    $('#js-textarea-post' + commentId).show();
-    $('#js-comment-label-' + commentId).hide();
-  });
-  $(document).on("click", ".comment-cancel-button", function () {
-    const commentId = $(this).data('cancel-id');
-    $('#js-textarea-post-' + commentId).hide();
-    $('#js-comment-label-' + commentId).show();
-  });
-});
+// $(function () {
+//   $(document).on("click", ".js-comment-button", function () {
+//     const commentId = $(this).data('comment-id');
+//     console.log(commentId);
+//     $('#js-textarea-post-' + commentId).show();
+//     $('#js-comment-label-' + commentId).hide();
+//     // $('#js-comment-button-' + commentId).show();
+//   });
+//   $(document).on("click", ".comment-cancel-button", function () {
+//     const commentId = $(this).data('cancel-id');
+//     $('#js-textarea-post-' + commentId).hide();
+//     $('#js-comment-label-' + commentId).show();
+//     // $('#js-comment-button-' + commentId).hide();
+//   });
+// });
 
 // コメント編集エリア表示
 $(function () {
@@ -72,24 +74,16 @@ $(function () {
     console.log(commentId);
     $('#js-textarea-' + commentId).show();
     $('#js-comment-label-' + commentId).hide();
-    //const commentTextArea = $('#js-textarea-comment-' + commentId);
-    //const commentButton = $('#js-comment-button-' + commentId);
-    //commentLabelArea.hide();
-    // commentTextArea.show();
-    // commentButton.show();
+    $('#js-textarea-comment-' + commentId).show();
+    $('#js-comment-button-' + commentId).show();
   });
 
   $(document).on("click", ".comment-cancel-button", function () {
     const commentId = $(this).data('cancel-id');
-    $('#js-textarea-' + commentId).hide();
     $('#js-comment-label-' + commentId).show();
-    // const commentTextArea = $('#js-textarea-comment-' + commentId);
-    // const commentButton = $('#js-comment-button-' + commentId);
-    // const commentError = $('#js-comment-post-error-' + commentId);
-
-    /*commentTextArea.hide();
-    commentButton.hide();
-    commentError.hide();*/
+    $('#js-textarea-comment-' + commentId).hide();
+    $('#js-comment-button-' + commentId).hide();
+    $('#js-comment-post-error-' + commentId).hide();
   });
 
   // コメント更新ボタン
@@ -107,16 +101,10 @@ $(function () {
         }
       }
     }).done(function (date) {  // ajax通信が成功した時の処理
-      const commentLabelArea = $('#js-comment-label-' + commentId);
-      const commentTextArea = $('#js-textarea-comment-' + commentId);
-      const commentButton = $('#js-comment-button-' + commentId);
-      const commentError = $('#js-comment-post-error-' + commentId);
-
-      commentLabelArea.show();
-      commentLabelArea.text(date.comment);
-      commentTextArea.hide();
-      commentButton.hide();
-      commentError.hide();
+      $('#js-comment-label-' + commentId).show();
+      $('#js-textarea-comment-' + commentId).hide().text(data.body);
+      $('#js-comment-button-' + commentId).hide();
+      $('#js-comment-post-error-' + commentId).hide();
     }).fail(function () {
       const commentError = $('#js-comment-post-error-' + commentId);
       commentError.text('コメントを入力してください');

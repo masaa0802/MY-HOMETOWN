@@ -9,19 +9,26 @@
       <% @posts.each do |posts| %>
         <div class="box" id="makeImg">
           <%= render 'videos/video', post: posts %>
-          <div class="likebuttons" id="like_buttons_<%= posts.id %>">
-            <%= render 'likes/likes', post: posts %>
-          </div>
-          <div>
-        <!--<#% if posts.user_id == current_user %>-->
-          <%= link_to post_path(posts.id) do %>
-            <%= current_user.name %>
-          <% end %>
-        <!--<#% else %>-->
-        <!--  <#%= posts.user.name %>-->
-        <!--<#% end %>-->
-            <%= render 'comments/comments', post: posts %>
-          </div>
+          <section>
+            <span class="likebuttons" id="like_buttons_<%= posts.id %>">
+              <%= render 'likes/likes', post: posts %>
+            </span>
+            <%= link_to new_post_comment_path(posts) do %>
+              <span data-comment-id="<%= posts.comment %>" class="js-comment-button mb-3">
+                  <i class="far fa-comment-alt "></i>
+              </span>
+            <% end %>
+            <% if posts.user == current_user %>
+            <span class="detailbuttons">
+              <%= link_to post_path(posts) do %>
+                <i class="far fa-file-alt"></i>
+              <% end %>
+            </span>
+            <% end %>
+          </section>
+          <!--<p><#%= link_to(posts.user.user_name, user_path(posts.user_id)) %></p>-->
+          <p class="caption"><%= posts.caption %></p>
+          <%= render 'comments/comments', post: posts %>
         </div>
       <% end %>
     </div>
