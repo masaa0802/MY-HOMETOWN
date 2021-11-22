@@ -1,7 +1,4 @@
 <% post.comments.each do |comment|%>
-    <span data-comment-id="<%= comment.id %>" class="comment-button">
-      <i class="far fa-comment-alt "></i>
-    </span>
   <div style="display: none;" id="js-textarea-post-<%= comment.id %>">
     <textarea id="js-textarea-comment-" class="form-control js-comment-post-error"><%= comment.comment %></textarea>
     <button data-cancel-id=<%= comment.id %> type="button" class="btn btn-light comment-cancel-button mt-2">

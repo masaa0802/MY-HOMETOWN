@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="card-group row-cols-1 row-cols-md-3 g-4 m-4">
+      <div class="col mb-4">
+      <div class="card" style="width: 18rem;">
+        <%= link_to "user.show.png", "data-lightbox" => "user.show.png" do %>
+        <%= image_tag "user.show.png", alt: "user.show", width:"100%", height:"150px", class: "user.show" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><strong>登録者情報</strong></h5>
+          <p class="card-text">
+            投稿者画像・名前・メールアドレスが確認できます。
+            編集ボタンを押すと編集画面に遷移します。
+            <p></p>
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col mb-4">
+      <div class="card" style="width: 18rem;">
+        <%= link_to "user.edit.png", "data-lightbox" => "user.edit.png" do %>
+        <%= image_tag "user.edit.png", alt: "user.edit", width:"100%", height:"150px", class: "user.edit" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><strong>登録者編集</strong></h5>
+          <p class="card-text">
+            投稿者画像・名前・メールアドレスの編集ができます。
+            退会するボタンを押すと退会確認画面に遷移します。
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col mb-4">
+      <div class="card" style="width: 18rem;">
+        <%= link_to "unsubscribe.png", "data-lightbox" => "unsubscribe.png" do %>
+        <%= image_tag "unsubscribe.png", alt: "unsubscribe", width:"100%", height:"150px", class: "unsubscribe" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><strong>退会画面</strong></h5>
+          <p class="card-text">
+            退会しないボタンを押すと、登録者情報へ戻ります。
+            退会するボタンを押すと、退会が確定し、トップページへ遷移します。
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+        <%= link_to "post.png", "data-lightbox" => "post.png" do %>
+        <%= image_tag "post.png", alt: "post", width:"100%", height:"150px", class: "post" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><strong>投稿一覧</strong></h5>
+          <p class="card-text">
+            投稿一覧ページには左側に投稿、右側にGoogle mapが表示されています。
+            投稿には上に投稿動画、下にいいね、コメント、投稿編集ボタンが実装されています。
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <%= link_to "post.edit.png", "data-lightbox" => "post.edit.png" do %>
+          <%= image_tag "post.edit.png", alt: "post.edit", width:"100%", height:"150px", class: "post.edit" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><strong>投稿編集</strong></h5>
+            <p class="card-text">
+              投稿一覧の投稿編集ボタンを押すと投稿内容の編集、投稿の削除ができます。
+              <p></p></br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
