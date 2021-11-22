@@ -3,9 +3,9 @@
     <!--<#%= link_to post_path(comment) do %>-->
     <div id="js-comment-<%= comment.id %>">
       <div id="js-comment-label-<%= comment.id %>">
-        <section>
+        <section class="ml-4">
           <%= comment.comment %>
-          <span data-comment-id="<%= comment.id %>" class="js-edit-comment-button">
+          <span data-comment-id="<%= comment.id %>" class="edit-comment-button">
             <i class="fas fa-edit text-primary"></i>
           </span>
           <span>

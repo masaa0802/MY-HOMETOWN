@@ -51,25 +51,26 @@ $(".theTarget").skippr({
 
 });
 // コメント投稿エリア表示
-// $(function () {
-//   $(document).on("click", ".js-comment-button", function () {
-//     const commentId = $(this).data('comment-id');
-//     console.log(commentId);
-//     $('#js-textarea-post-' + commentId).show();
-//     $('#js-comment-label-' + commentId).hide();
-//     // $('#js-comment-button-' + commentId).show();
-//   });
-//   $(document).on("click", ".comment-cancel-button", function () {
-//     const commentId = $(this).data('cancel-id');
-//     $('#js-textarea-post-' + commentId).hide();
-//     $('#js-comment-label-' + commentId).show();
-//     // $('#js-comment-button-' + commentId).hide();
-//   });
-// });
+$(function () {
+  $(document).on("click", ".comment-button", function () {
+    const commentId = $(this).data('comment-id');
+    console.log(commentId);
+    $('#js-textarea-post-' + commentId).show();
+    $('#js-comment-label-' + commentId).hide();
+    $('#js-comment-button-' + commentId).show();
+  });
+  $(document).on("click", ".comment-cancel-button", function () {
+    const commentId = $(this).data('cancel-id');
+    $('#js-textarea-post-' + commentId).hide();
+    $('#js-comment-label-' + commentId).show();
+    $('#js-comment-button-' + commentId).hide();
+  });
+});
+
 
 // コメント編集エリア表示
 $(function () {
-  $(document).on("click", ".js-edit-comment-button", function () {
+  $(document).on("click", ".edit-comment-button", function () {
     const commentId = $(this).data('comment-id');
     console.log(commentId);
     $('#js-textarea-' + commentId).show();
@@ -77,7 +78,6 @@ $(function () {
     $('#js-textarea-comment-' + commentId).show();
     $('#js-comment-button-' + commentId).show();
   });
-
   $(document).on("click", ".comment-cancel-button", function () {
     const commentId = $(this).data('cancel-id');
     $('#js-comment-label-' + commentId).show();

@@ -3,15 +3,18 @@
     <div class="col-3 offset-md-1"><%= link_to image_tag('logo.png', size: "140x140"), root_path %></div>
       <div class="container">
         <% if user_signed_in? %>
-          <li><%= link_to new_post_path do %>
+          <li>
+            <%= link_to new_post_path do %>
   　         <i class="fas fa-pen-square"> 投稿</i>
+  　  　      <% end %>
   　  　　　</li>
-              <% end %>
         <div class="row col-6 offset-md-3" >
           <li><%= link_to 'My page', user_path(current_user), class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to '投稿一覧', posts_path,class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
+        </div>
         <% else %>
+        <div class="row col-6 offset-md-3">
           <li><%= link_to '利用方法', about_path, class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to 'ログイン', new_user_session_path, class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to '新規登録', new_user_registration_path, class:'btn btn-outline-dark m-3' %></li>

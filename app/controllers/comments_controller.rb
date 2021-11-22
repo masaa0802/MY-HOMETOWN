@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[update destroy create]
 
   def new
-    @comment=Comment.new
+    @comment = current_user.comments.new
   end
 
   def create

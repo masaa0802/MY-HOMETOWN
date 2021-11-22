@@ -13,11 +13,7 @@
             <span class="likebuttons" id="like_buttons_<%= posts.id %>">
               <%= render 'likes/likes', post: posts %>
             </span>
-            <%= link_to new_post_comment_path(posts) do %>
-              <span data-comment-id="<%= posts.comment %>" class="js-comment-button mb-3">
-                  <i class="far fa-comment-alt "></i>
-              </span>
-            <% end %>
+              <%= render 'comments/newcomment', post: posts %>
             <% if posts.user == current_user %>
             <span class="detailbuttons">
               <%= link_to post_path(posts) do %>
