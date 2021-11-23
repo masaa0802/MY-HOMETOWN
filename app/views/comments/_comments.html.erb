@@ -6,14 +6,14 @@
     <li class="comment-container">
       <div class="comment-box">
         <div class="comment-avatar">
-          <%= attachment_image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>
+          <!--<#%= image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>-->
         </div>
         <div class="comment-text">
-          <p><%= link_to "@#{comment.user.name}", users_user_path(comment.user.id) %></p>
+          <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
           <div class="comment-entry">
-            <%= comment.content %>
+            <%= comment.comment %>
             <% if comment.user == current_user %>
-              <%= link_to item_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+              <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
                 <i class="fas fa-trash" style="color: black;"></i>
               <% end %>
             <% end %>
@@ -26,6 +26,7 @@
     </li>
   <% end %>
 <% end %>
+
 <!-- コメント内容(3件目以降) ------------------------------------------------------------------>
 <div class="collapse" id="collapseExample">
   <% comments.offset(2).each do |comment| %>
@@ -33,14 +34,14 @@
       <li class="comment-container">
         <div class="comment-box">
           <div class="comment-avatar">
-            <%= attachment_image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>
+            <!--<#%= image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>-->
           </div>
           <div class="comment-text">
-            <p><%= link_to "@#{comment.user.name}", users_user_path(comment.user.id) %></p>
+            <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
             <div class="comment-entry">
-              <%= comment.content %>
+              <%= comment.comment %>
               <% if comment.user == current_user %>
-                <%= link_to item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
                   <i class="fas fa-trash" style="color: black;"></i>
                 <% end %>
               <% end %>
