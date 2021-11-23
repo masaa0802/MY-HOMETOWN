@@ -1,12 +1,6 @@
-<% post.comments.each do |comment|%>
-  <div style="display: none;" id="js-textarea-post-<%= comment.id %>">
-    <textarea id="js-textarea-comment-" class="form-control js-comment-post-error"><%= comment.comment %></textarea>
-    <button data-cancel-id=<%= comment.id %> type="button" class="btn btn-light comment-cancel-button mt-2">
-      キャンセル
-    </button>
-    <button data-update-id=<%= comment.id %> type="submit" class="btn btn-success comment-update-button mt-2">
-      投稿
-    </button>
-  </div>
+<%= form_with(model: [post, comment], url: post_comments_path(@post) ) do |f| %>
+    <%= f.text_area :comment, class: "input-mysize" %>
+    <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
 <% end %>
+
 

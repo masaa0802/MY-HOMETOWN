@@ -18,7 +18,7 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-   protected
+  protected
 
   def reject_user
     @user = User.find_by(email: params[:user][:email])

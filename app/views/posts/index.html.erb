@@ -13,11 +13,9 @@
             <span class="likebuttons" id="like_buttons_<%= posts.id %>">
               <%= render 'likes/likes', post: posts %>
             </span>
-            <span data-comment-id="<%= posts.id %>" class="comment-button">
-              <i class="far fa-comment-alt ">
-              <%= render 'comments/newcomment', post: posts %>
-              </i>
-            </span>
+              <%= link_to new_post_comment_path(posts) do %>
+                <i class="far fa-comment-alt "></i>
+              <% end %>
             <% if posts.user == current_user %>
             <span class="detailbuttons">
               <%= link_to post_path(posts) do %>
@@ -27,7 +25,6 @@
             <% end %>
           </section>
           <p class="caption"><%= posts.caption %></p>
-          <%= render 'comments/comments', post: posts %>
         </div>
       <% end %>
     </div>

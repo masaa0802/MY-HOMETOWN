@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[update destroy create]
 
   def new
-    @comment = current_user.comments.new
+    @comment = Comment.new
+  end
+  def show
+    @post= Post.find(params[:post_id])
+    @comment = Comment.new
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def create
@@ -12,21 +16,19 @@ class CommentsController < ApplicationController
     @comment.save
     render :index
   end
-  
+
   def update
     @comment.update!(comment_update_params)
     render json: @comment
   end
 
   def destroy
-    @comment.destroy!
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    render :index
   end
 
   private
-
-  def set_comment
-    @comment = current_user.comments.find(params[:id])
-  end
 
   def comment_params
     params.require(:comment).permit(:comment)

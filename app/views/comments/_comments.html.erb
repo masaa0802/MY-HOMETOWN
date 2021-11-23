@@ -1,28 +1,57 @@
-<% post.comments.each do |comment|%>
-  <div>
-    <div id="js-comment-<%= comment.id %>">
-      <div id="js-comment-label-<%= comment.id %>">
-        <section class="ml-4">
-          <%= comment.comment %>
-          <span data-comment-id="<%= comment.id %>" class="edit-comment-button">
-            <i class="fas fa-edit text-primary"></i>
-          </span>
-          <span>
-            <%= link_to post_path(post.id), method: :delete, remote: true, class: 'js-delete-comment-button', data: {confirm: 'よろしいですか'} do %>
-              <%= icon 'fas', 'trash' %>
+<!-- コメント内容(２件) ------------------------------------------------------------------>
+<%= @comments.count %>件コメント
+<h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
+<% @comments.first(2).each do |comment| %>
+  <% unless comment.id.nil? %>
+    <li class="comment-container">
+      <div class="comment-box">
+        <div class="comment-avatar">
+          <%= attachment_image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>
+        </div>
+        <div class="comment-text">
+          <p><%= link_to "@#{comment.user.name}", users_user_path(comment.user.id) %></p>
+          <div class="comment-entry">
+            <%= comment.content %>
+            <% if comment.user == current_user %>
+              <%= link_to item_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                <i class="fas fa-trash" style="color: black;"></i>
+              <% end %>
             <% end %>
+          </div>
+          <span class="comment-date pull-right">
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
           </span>
-        </section>
+        </div>
       </div>
-      <div style="display: none;" id="js-textarea-<%= comment.id %>">
-        <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control comment-post-error"><%= comment.comment %></textarea>
-        <button data-cancel-id=<%= comment.id %> type="button" class="btn btn-light comment-cancel-button mt-2">
-          キャンセル
-        </button>
-        <button data-update-id=<%= comment.id %> type="submit" class="btn btn-success comment-update-button mt-2">
-          更新
-        </button>
-      </div>
-    </div>
-  </div>
+    </li>
+  <% end %>
 <% end %>
+<!-- コメント内容(3件目以降) ------------------------------------------------------------------>
+<div class="collapse" id="collapseExample">
+  <% comments.offset(2).each do |comment| %>
+    <% unless comment.id.nil? %>
+      <li class="comment-container">
+        <div class="comment-box">
+          <div class="comment-avatar">
+            <%= attachment_image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>
+          </div>
+          <div class="comment-text">
+            <p><%= link_to "@#{comment.user.name}", users_user_path(comment.user.id) %></p>
+            <div class="comment-entry">
+              <%= comment.content %>
+              <% if comment.user == current_user %>
+                <%= link_to item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                  <i class="fas fa-trash" style="color: black;"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <span class="comment-date pull-right">
+                  <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+            </span>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</div>
+
