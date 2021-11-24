@@ -3,10 +3,12 @@
 
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
-        <% HomeImage.all.each do |image| %>
+
+        <% HomeImage.all.each do |image | %>
           <%= link_to image.image.url, "data-lightbox": image.image do %>
             <%=image_tag image.image.to_s, width:"100%", height:"150px", class: "user.show" %>
           <% end %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><strong>登録者情報</strong></h5>
           <p class="card-text">
@@ -20,9 +22,9 @@
 
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
-          <%= link_to image.image.url, "data-lightbox": image.image do %>
-            <%=image_tag image.image.to_s, width:"100%", height:"150px", class: "user.show" %>
-          <% end %>
+        <%= link_to "user.edit.png", "data-lightbox":"user.edit.png" do %>
+          <%= image_tag "user.edit.png", alt: "user.edit", width:"100%", height:"150px", class: "user.edit" %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><strong>登録者編集</strong></h5>
           <p class="card-text">
@@ -35,9 +37,9 @@
 
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
-          <%= link_to image.image.url, "data-lightbox": image.image do %>
-            <%=image_tag image.image.to_s, width:"100%", height:"150px", class: "user.show" %>
-          <% end %>
+        <%= link_to "unsubscribe.png", "data-lightbox":"unsubscribe.png" do %>
+          <%= image_tag "unsubscribe.png", alt: "unsubscribe", width:"100%", height:"150px", class: "unsubscribe" %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><strong>退会画面</strong></h5>
           <p class="card-text">
@@ -50,8 +52,8 @@
 
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <%= link_to image.image.url, "data-lightbox": image.image do %>
-          <%=image_tag image.image.to_s, width:"100%", height:"150px", class: "user.show" %>
+        <%= link_to "post.png", "data-lightbox":"post.png" do %>
+          <%= image_tag "post.png", alt: "post", width:"100%", height:"150px", class: "post" %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><strong>投稿一覧</strong></h5>
@@ -65,8 +67,8 @@
 
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <%= link_to image.image.url, "data-lightbox": image.image do %>
-          <%=image_tag image.image.to_s, width:"100%", height:"150px", class: "user.show" %>
+        <%= link_to "post.edit.png", "data-lightbox":"post.edit.png" do %>
+          <%= image_tag "post.edit.png", alt: "post.edit", width:"100%", height:"150px", class: "post.edit" %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><strong>投稿編集</strong></h5>
@@ -75,8 +77,8 @@
             <p></p></br>
           </p>
         </div>
-        <% end %>
       </div>
     </div>
+
   </div>
 </div>
