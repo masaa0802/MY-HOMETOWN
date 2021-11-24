@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :maps, dependent: :destroy
   validates :caption, presence: true, length: {maximum: 200}
 
   def liked_by?(user)

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     put 'withdraw/:id' => 'customers#withdraw'
 
   resources :posts do
-    resources :maps,only: [:index]
+    resources :maps,only: [:create]
     resources :likes,only: [:create, :destroy]
     resources :comments,only: [:update, :destroy, :create, :new]
   end

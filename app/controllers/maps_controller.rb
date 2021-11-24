@@ -1,7 +1,6 @@
 class MapsController < ApplicationController
-  def index
-  end
   def map
+    @maps = Map.all
   end
   
 end
