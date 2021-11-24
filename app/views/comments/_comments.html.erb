@@ -8,19 +8,21 @@
         <div class="comment-avatar">
           <!--<#%= image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>-->
         </div>
-        <div class="comment-text">
-          <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
-          <div class="comment-entry">
-            <%= comment.comment %>
-            <% if comment.user == current_user %>
-              <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
-                <i class="fas fa-trash" style="color: black;"></i>
+        <div class="box2" id="makeImg">
+          <div class="comment-text">
+            <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
+            <div class="comment-entry">
+              <%= comment.comment %>
+              <% if comment.user == current_user %>
+                <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                  <i class="fas fa-trash" style="color: black;"></i>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+            <span class="comment-date pull-right">
+              <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+            </span>
           </div>
-          <span class="comment-date pull-right">
-            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-          </span>
         </div>
       </div>
     </li>
@@ -36,19 +38,21 @@
           <div class="comment-avatar">
             <!--<#%= image_tag comment.user, :image,fallback: "default.jpg", alt: "user-icon", size: "40", class: "user-icon" %>-->
           </div>
-          <div class="comment-text">
-            <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
-            <div class="comment-entry">
-              <%= comment.comment %>
-              <% if comment.user == current_user %>
-                <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
-                  <i class="fas fa-trash" style="color: black;"></i>
+          <div class="box2" id="makeImg">
+            <div class="comment-text">
+              <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
+              <div class="comment-entry">
+                <%= comment.comment %>
+                <% if comment.user == current_user %>
+                  <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                    <i class="fas fa-trash" style="color: black;"></i>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
+              <span class="comment-date pull-right">
+                    <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+              </span>
             </div>
-            <span class="comment-date pull-right">
-                  <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-            </span>
           </div>
         </div>
       </li>
