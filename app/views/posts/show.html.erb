@@ -3,11 +3,12 @@
     <div class="col">
       <div class="box" id="makeImg">
         <%= render 'videos/video', post: @post %>
-        <div class="col m-3">
+        <p class="caption"><%= @post.caption %></p>
+        <div class="col m-4 ml-5">
           <%= link_to  edit_post_path(@post), class:"btn btn-md btn-success shadow" do %>
             <i class="fas fa-user-cog mb-1"></i>編集する
           <% end %>
-          <%= link_to "削除する",post_path(@post), method: :delete,class: "btn btn-danger" %>
+          <%= link_to "削除する",post_path(@post), method: :delete,class: "btn btn-danger shadow" %>
         </div>
       </div>
     </div>
