@@ -1,5 +1,4 @@
 class ImageUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -15,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def auto
-    manipulate! do|image|
+    manipulate! do |image|
       image.auto_orient
     end
   end
@@ -24,12 +23,12 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
- version :thumb do
-   process resize_to_fit: [200, 200]
- end
-version :thumb50 do
-  process resize_to_fit: [100, 100]
- end
+  version :thumb do
+    process resize_to_fit: [200, 200]
+  end
+  version :thumb50 do
+    process resize_to_fit: [100, 100]
+  end
 
   process :auto
 

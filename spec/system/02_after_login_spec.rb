@@ -3,8 +3,8 @@ require 'rails_helper'
 describe '[STEP2] ユーザログイン後のテスト' do
   let(:user_image) { Rails.root.join('spec/fixtures/test.jpg') }
   let(:image) { Rack::Test::UploadedFile.new(post_image) }
-  let(:user) { create(:user,name:'name',email:'email',password:'password',image:'image')}
-  let!(:post) { create(:post,caption:'caption') }
+  let(:user) { create(:user, name: 'name', email: 'email', password: 'password', image: 'image') }
+  let!(:post) { create(:post, caption: 'caption') }
 
   before do
     visit new_user_session_path
@@ -66,7 +66,8 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(response).to have_http_status(400)
       end
       context 'when the request is valid' do
-        before { get '/posts', params: { api_key: 'AIzaSyBF_KarniT2enD5AAGa_yZ48HhVc-c5ryM'} }
+        before { get '/posts', params: { api_key: 'AIzaSyBF_KarniT2enD5AAGa_yZ48HhVc-c5ryM' } }
+
         it 'returns status code 400' do
           expect(response).to have_http_status(200)
         end
@@ -83,7 +84,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
       end
 
       it '自分の新しい投稿が正しく保存される' do
-        expect {click_button '作成する'}.to change(user.posts, :count).by(1)
+        expect { click_button '作成する' }.to change(user.posts, :count).by(1)
       end
       it 'リダイレクト先が、保存できた投稿の一覧画面になっている' do
         click_button '作成する'
@@ -154,7 +155,6 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it '更新ボタンが表示される' do
         expect(page).to have_button '更新する'
       end
-
     end
 
     context '編集成功のテスト' do

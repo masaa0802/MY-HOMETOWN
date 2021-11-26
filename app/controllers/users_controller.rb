@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
 
   def create
-    @user= User.new(user_params)
+    @user = User.new(user_params)
     @user.save
     redirect_to @user
   end
+
   def show
     @user = User.find(params[:id])
   end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def withdraw
     @user = User.find(params[:id])
-    @user.update(is_valid: false)
+    @user.update(is_valid: true)
     reset_session
     redirect_to root_path
   end
@@ -42,7 +42,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:email,:image)
+    params.require(:user).permit(:name, :email, :image)
   end
-
 end

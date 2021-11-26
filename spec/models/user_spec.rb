@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Userモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
-
     context 'nameカラム' do
       it '空欄でないこと' do
         user.name = ''
@@ -49,6 +48,5 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         expect(User.reflect_on_association(:comments).macro).to eq :has_many
       end
     end
-
   end
 end

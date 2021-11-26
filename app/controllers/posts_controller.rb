@@ -1,22 +1,21 @@
 class PostsController < ApplicationController
-
   def index
-    @posts= Post.all
+    @posts = Post.all
   end
 
   def new
-    @post= Post.new
+    @post = Post.new
   end
 
   def create
-    @post= Post.new(post_params)
+    @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save!
     redirect_to posts_path
   end
 
   def show
-    @post= Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def edit

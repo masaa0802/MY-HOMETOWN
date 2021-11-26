@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
-
   def new
-    @post= Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     @comment = Comment.new
     @comments = @post.comments.order(created_at: :desc)
   end

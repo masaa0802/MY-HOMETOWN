@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Postモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
-
     context 'captionカラム' do
       it '空欄でないこと' do
         post.caption = ''
@@ -37,6 +36,5 @@ RSpec.describe 'Postモデルのテスト', type: :model do
         expect(Post.reflect_on_association(:comments).macro).to eq :has_many
       end
     end
-
   end
 end

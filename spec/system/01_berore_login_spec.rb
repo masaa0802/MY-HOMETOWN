@@ -127,7 +127,7 @@ describe '[STEP1] ユーザログイン前のテスト' do
 
     context '新規登録成功のテスト' do
       before do
-        fill_in 'user[image]',with: 'image'
+        fill_in 'user[image]', with: 'image'
         fill_in 'user[name]', with: Faker::Lorem.characters(number: 10)
         fill_in 'user[email]', with: Faker::Internet.email
         fill_in 'user[password]', with: 'password'

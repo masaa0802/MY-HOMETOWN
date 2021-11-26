@@ -9,15 +9,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
   get 'about' => 'homes#about'
-  resources :users, only: [:show,:edit,:update]
-    get 'users/unsubscribe/:id' => 'users#unsubscribe', as: 'confirm_unsubscribe'
-    patch 'users/:id/withdraw/' => 'users#withdraw', as: 'withdraw_user'
-    put 'withdraw/:id' => 'customers#withdraw'
+  resources :users, only: [:show, :edit, :update]
+  get 'users/unsubscribe/:id' => 'users#unsubscribe', as: 'confirm_unsubscribe'
+  patch 'users/:id/withdraw/' => 'users#withdraw', as: 'withdraw_user'
+  put 'withdraw/:id' => 'customers#withdraw'
 
   resources :posts do
-    resources :maps,only: [:create]
-    resources :likes,only: [:create, :destroy]
-    resources :comments,only: [:update, :destroy, :create, :new]
+    resources :maps, only: [:create]
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:update, :destroy, :create, :new]
   end
 end
-
