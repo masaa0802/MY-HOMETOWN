@@ -5,7 +5,7 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    @video.save
+    @video.save!
     redirect_to posts_path(@video)
   end
 

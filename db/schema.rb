@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_120908) do
+ActiveRecord::Schema.define(version: 2021_11_27_141637) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -65,12 +65,8 @@ ActiveRecord::Schema.define(version: 2021_11_23_120908) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.text "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
-    t.string "video"
-    t.text "comment"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,7 +79,6 @@ ActiveRecord::Schema.define(version: 2021_11_23_120908) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.text "caption"
     t.boolean "is_valid"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -94,6 +89,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_120908) do
     t.text "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video"
   end
 
 end
