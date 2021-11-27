@@ -3,6 +3,7 @@
 
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
+        <% @image.each do |image|%>
           <% image = HomeImage.find(1) %>
           <%= link_to image.image.url , "data-lightbox": image.image do %>
             <%=image_tag asset_path(image.image.to_s), width:"100%", height:"150px", class: "user.show" %>
