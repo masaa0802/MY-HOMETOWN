@@ -20,7 +20,7 @@
 
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
-          <% image = HomeImage.find(3) %>
+          <% image = HomeImage.find(2) %>
           <%= link_to image.image.url , "data-lightbox": image.image do %>
             <%=image_tag asset_path(image.image.to_s), width:"100%", height:"150px", class: "user.show" %>
           <% end %>
@@ -36,7 +36,7 @@
 
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
-          <% image = HomeImage.find(4) %>
+          <% image = HomeImage.find(3) %>
           <%= link_to image.image.url , "data-lightbox": image.image do %>
             <%=image_tag asset_path(image.image.to_s), width:"100%", height:"150px", class: "user.show" %>
           <% end %>
@@ -52,7 +52,7 @@
 
     <div class="col">
       <div class="card" style="width: 18rem;">
-          <% image = HomeImage.find(5) %>
+          <% image = HomeImage.find(4) %>
           <%= link_to image.image.url , "data-lightbox": image.image do %>
             <%=image_tag asset_path(image.image.to_s), width:"100%", height:"150px", class: "user.show" %>
           <% end %>
@@ -68,7 +68,7 @@
 
     <div class="col">
       <div class="card" style="width: 18rem;">
-          <% image = HomeImage.find(6) %>
+          <% image = HomeImage.find(5) %>
           <%= link_to image.image.url , "data-lightbox": image.image do %>
             <%=image_tag asset_path(image.image.to_s), width:"100%", height:"150px", class: "user.show" %>
           <% end %>
