@@ -15,12 +15,44 @@
           <li><%= link_to '投稿一覧', posts_path,class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
         </div>
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <ul>
+            <li><a href="#">マイページ</a></li>
+            <li><a href="#">投稿一覧</a></li>
+            <li><a href="#">ログアウト</a></li>
+          </ul>
+        </div>
+
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
         <% else %>
         <div class="row offset-md-6">
           <li><%= link_to '利用方法', about_path, class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to 'ログイン', new_user_session_path, class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to '新規登録', new_user_registration_path, class:'btn btn-outline-dark m-3' %></li>
         <% end %>
+        </div>
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <ul>
+            <li><a href="#"利用方法</a></li>
+            <li><a href="#">ログイン</a></li>
+            <li><a href="#">新規登録</a></li>
+          </ul>
+        </div>
+
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </div>
       </div>
         <div class='text-light2'>
@@ -31,4 +63,6 @@
       </div>
     </div>
   </nav>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 </header>
