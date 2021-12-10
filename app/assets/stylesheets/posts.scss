@@ -38,7 +38,11 @@ span.commentbuttons {
   margin-left: 3px;
   margin-right: 7px;
 }
-
+@media screen and (max-width: 540px) {
+  #makeImg.box{
+    margin-left: 0px;
+  }
+}
 // コメントレイアウト
 #js-comment-label-postsId{
   position: relative;

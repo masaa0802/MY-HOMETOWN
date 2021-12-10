@@ -11,3 +11,9 @@
     width: 870px;
   }
 }
+
+@media screen and (max-width: 540px) {
+  #map {
+    display: none;
+  }
+}
