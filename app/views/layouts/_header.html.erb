@@ -15,12 +15,45 @@
           <li><%= link_to '投稿一覧', posts_path,class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
         </div>
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <a>
+            <%= link_to new_post_path do %>
+  　         <i class="fas fa-pen-square"> 投稿</i>
+  　  　      <% end %>
+  　  　　　</a>
+          <a><%= link_to 'マイページ', user_path(current_user)%></a>
+          <a><%= link_to '投稿一覧', posts_path%></a>
+          <a><%= link_to 'ログアウト', destroy_user_session_path, method: :delete%></a>
+        </div>
+
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
         <% else %>
         <div class="row offset-md-6">
           <li><%= link_to '利用方法', about_path, class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to 'ログイン', new_user_session_path, class:'btn btn-outline-dark m-3' %></li>
           <li><%= link_to '新規登録', new_user_registration_path, class:'btn btn-outline-dark m-3' %></li>
+
+        </div>
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <a><%= link_to '利用方法', about_path%></a>
+          <a><%= link_to 'ログイン', new_user_session_path%></a>
+          <a><%= link_to '新規登録', new_user_registration_path%></a>
+        </div>
         <% end %>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </div>
       </div>
         <div class='text-light2'>
