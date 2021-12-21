@@ -1,6 +1,7 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 // 新規投稿レイアウト
 .container1{
   position: relative;
@@ -10,8 +11,8 @@
   left: 20px;
 }
 #wrapper.row2 {
-  height: 750px;
-  width: 600px;
+  height: 690px;
+  width: 40%;
   overflow-y: scroll;
 }
 .col2 {
@@ -26,10 +27,30 @@
   height: 500px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.57));
 }
+
+.profile{
+  padding-top: 5%;
+  padding-left: 5%;
+  display: -webkit-inline-box;
+}
+
+.profile_user_name{
+  margin-top: 10%;
+  margin-left: 20%;
+  display: contents;
+}
+
+section{
+  line-height: 2;
+}
+
 .likebuttons {
   margin-left: 25px;
 }
 
+.detailbuttons{
+  margin-left: 3px;
+}
 p.caption{
   margin-left: 40px;
 }
@@ -71,7 +92,7 @@ span.commentbuttons {
 .video_wrapper {
     position: relative;
     width:400px;
-    height:300px;
+    height:250px;
     overflow: hidden;
     margin-left: 25px;
 }
