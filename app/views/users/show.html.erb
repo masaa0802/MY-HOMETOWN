@@ -7,9 +7,9 @@
           <h5 class="font-weight-bold p-1 mr-4 mb-0">登録者情報</h5>
         </div>
           <% if @user.image? %>
-            <%= image_tag asset_path(@user.image.thumb.url), class: "user-icon" %>
+            <%= image_tag asset_path(@user.image.thumb.url),size: "150", class: "user-icon" %>
           <% else %>
-            <%= image_tag asset_path("default.jpg"), alt: "user-icon", size: "200", class: "user-icon" %>
+            <%= image_tag asset_path("default.jpg"), alt: "user-icon", size: "150", class: "user-icon" %>
           <% end %>
         <table class="col-7 table table-bordered mt-3 customer_table shadow mb-5">
           <tr>

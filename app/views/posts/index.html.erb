@@ -10,14 +10,12 @@
         <div class="box" id="makeImg">
           <% if posts.user == current_user %>
             <div class="profile">
-            <%= link_to user_path(posts.user.id) do %>
               <% if posts.user.image? %>
                 <%= image_tag asset_path(posts.user.image.thumb.url), size: "40x40", class: "user-icon" %>
               <% else %>
                 <%= image_tag asset_path("default.jpg"), alt: "user-icon", size: "40x40", class: "user-icon" %>
               <% end %>
               <div class="profile_user_name"><strong><%= posts.user.name %></strong></div>
-            <% end %>
             </div>
           <% end %>
           <%= render 'videos/video', post: posts %>
