@@ -6,7 +6,8 @@
       <label>動画のアップロード</label></br>
       <%= form.file_field :video %>
     </div>
-
+    <%= form.label :住所%></br>
+    <%= form.text_area :address, autofocus: true%>
     <div class="field1 mb-3">
      <label>説明</label></br>
       <%= form.text_area :caption %>
