@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @maps = Map.all
   end
 
   def new
@@ -33,8 +34,12 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
+  
+  private
 
   def post_params
-    params.require(:post).permit(:caption, :video, :user_id)
+    params.require(:post).permit(:caption, :video, :user_id, )
   end
+  
+  
 end
