@@ -19,11 +19,13 @@
           </a>
         </div>
         <% else %>
+        <div class="container">
         <div class="row offset-md-4",  id="sp-menu">
           <li class="button09"><%= link_to '利用方法', about_path, class:'button09 m-3' %></li>
           <li class="button09"><%= link_to 'ログイン', new_user_session_path, class:'button09 m-3' %></li>
           <li class="button09"><%= link_to '新規登録', new_user_registration_path, class:'button09 m-3' %></li>
         </div>
+        
         <% end %>
         <div id="hm-icon">
           <a class="menu-trigger" href="#">
