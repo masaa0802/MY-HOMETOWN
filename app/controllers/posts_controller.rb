@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.maps.build
   end
 
   def create
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    
   end
 
   def edit
@@ -38,7 +40,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:caption, :video, :user_id, :id)
+    params.require(:post).permit(:caption, :video, :user_id)
   end
 
 
