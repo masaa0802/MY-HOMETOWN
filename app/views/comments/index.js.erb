@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.post.comments }) %>")
-$("textarea").val('');
-=======
-$("#comments_area").html("<%= j(render 'comments', { comments: @comment.post.comments }) %>")
+$("#comments_area").html("<%= j(render 'index', { comments: @comment.post.comments }) %>")
 $("textarea").val('')
->>>>>>> develop
