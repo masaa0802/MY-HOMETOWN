@@ -1,19 +1,20 @@
 <div class="container">
   <div class="row py-5">
     <div class="col-12" style="height: 500px">
-    <%= form_with model: @post, local: true do |form| %>
+    <%= form_with model: @post, local: true do |f| %>
     <div class="field mb-3">
       <label>動画のアップロード</label></br>
-      <%= form.file_field :video %>
+      <%= f.file_field :video %>
     </div>
-
+    <label>住所</label></br>
+    <%= f.text_field :address, autofocus: true, placeholder: "(例)東京都地元区"%>
     <div class="field1 mb-3">
      <label>説明</label></br>
-      <%= form.text_area :caption %>
+      <%= f.text_area :caption %>
     </div>
 
     <div class="#">
-      <%= form.submit "作成する" ,class:"#" %>
+      <%= f.submit "作成する" ,class:"#" %>
     </div>
     <% end %>
     </div>

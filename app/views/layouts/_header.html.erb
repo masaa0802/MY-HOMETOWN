@@ -1,16 +1,12 @@
 <header>
   <nav class='navbar navbar-expand-md border-bottom'>
     <div class="icon-image offset-md-1"><%= link_to image_tag('logo.png', size: "140x140"), root_path %></div>
-      <div class="container">
+      <div class="container" id="sp-menu">
+        <div class="row" style="display :contents">
         <% if user_signed_in? %>
-          <li>
-            <%= link_to new_post_path do %>
-  　         <i class="fas fa-pen-square"> 投稿</i>
+          <li class="button09"><%= link_to new_post_path,class:'button09 mt-4' do %> <i class="fas fa-pen-square"> 投稿</i>
   　  　      <% end %>
   　  　　　</li>
-      </div>
-      <div class="container" id="sp-menu">
-        <div class="row" style="display :contents" >
           <li class="button09"><%= link_to 'マイページ', user_path(current_user), class:'button09 m-3' %></li>
           <li class="button09"><%= link_to '投稿一覧', posts_path,class:'button09 m-3' %></li>
           <li class="button09"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"button09 m-3" %></li>
@@ -23,11 +19,13 @@
           </a>
         </div>
         <% else %>
+        <div class="container">
         <div class="row offset-md-4",  id="sp-menu">
           <li class="button09"><%= link_to '利用方法', about_path, class:'button09 m-3' %></li>
           <li class="button09"><%= link_to 'ログイン', new_user_session_path, class:'button09 m-3' %></li>
           <li class="button09"><%= link_to '新規登録', new_user_registration_path, class:'button09 m-3' %></li>
         </div>
+        
         <% end %>
         <div id="hm-icon">
           <a class="menu-trigger" href="#">
