@@ -11,8 +11,8 @@
   left: 20px;
 }
 #wrapper.row2 {
-  height: 690px;
-  width: 40%;
+  height: 845px;
+  width: 30%;
   overflow-y: scroll;
 }
 .col2 {
@@ -63,13 +63,20 @@ span.commentbuttons {
   margin-left: 3px;
   margin-right: 7px;
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1540px) {
+  #wrapper.row2 {
+    height: 690px;
+    width: 35%;
+    overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 1540px) {
   #makeImg.box{
     margin-left: 0px;
   }
   .col2 {
   padding-left: 5px;
-}
+  }
 }
 // コメントレイアウト
 #js-comment-label-postsId{
@@ -90,6 +97,7 @@ span.commentbuttons {
 .col1 {
   padding-right:0;
 }
+
 
 
 //videoレイアウト
