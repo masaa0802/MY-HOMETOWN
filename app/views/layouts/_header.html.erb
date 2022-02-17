@@ -9,23 +9,37 @@
   　  　      <% end %>
   　  　　　</li>
       </div>
-      <div class="container">
-        <div class="row" >
-          <li><%= link_to 'マイページ', user_path(current_user), class:'btn btn-outline-dark m-3' %></li>
-          <li><%= link_to '投稿一覧', posts_path,class:'btn btn-outline-dark m-3' %></li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark m-3' %></li>
+      <div class="container" id="sp-menu">
+        <div class="row" style="display :contents" >
+          <li class="button09"><%= link_to 'マイページ', user_path(current_user), class:'button09 m-3' %></li>
+          <li class="button09"><%= link_to '投稿一覧', posts_path,class:'button09 m-3' %></li>
+          <li class="button09"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"button09 m-3" %></li>
+        </div>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </div>
         <% else %>
-        <div class="row offset-md-6">
-          <li><%= link_to '利用方法', about_path, class:'btn btn-outline-dark m-3' %></li>
-          <li><%= link_to 'ログイン', new_user_session_path, class:'btn btn-outline-dark m-3' %></li>
-          <li><%= link_to '新規登録', new_user_registration_path, class:'btn btn-outline-dark m-3' %></li>
+        <div class="row offset-md-4",  id="sp-menu">
+          <li class="button09"><%= link_to '利用方法', about_path, class:'button09 m-3' %></li>
+          <li class="button09"><%= link_to 'ログイン', new_user_session_path, class:'button09 m-3' %></li>
+          <li class="button09"><%= link_to '新規登録', new_user_registration_path, class:'button09 m-3' %></li>
+        </div>
         <% end %>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </div>
       </div>
         <div class='text-light2'>
       　　  <form id="form2"  method="get">
-      　　　　  <input id="sbox2"  id="s" name="s" type="text" placeholder="Search"/>
+      　　　　  <input id="sbox2"  id="s" name="s" type="text" placeholder="キーワードで検索"/>
       　　　</form>
     　　　</div>
       </div>

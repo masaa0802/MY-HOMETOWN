@@ -4,7 +4,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
   let(:user_image) { Rails.root.join('spec/fixtures/test.jpg') }
   let(:image) { Rack::Test::UploadedFile.new(post_image) }
   let(:user) { create(:user, name: 'name', email: 'email', password: 'password', image: 'image') }
-  let!(:post) { create(:post, caption: 'caption') }
+  let!(:post) { create(:post, caption: 'caption',video: 'video') }
 
   before do
     visit new_user_session_path

@@ -1,12 +1,30 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 h1{
   color :white;
   position: absolute;
   top: 50%;
   left: 47%;
+}
+
+@media screen and (max-width: 540px) {
+  h1{
+    color :white;
+    position: absolute;
+    top: 43%;
+    left: 42%;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  li{
+    display: none;
+  }
+  .text-light2{
+    display: none;
+  }
 }
 
 

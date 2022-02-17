@@ -1,7 +1,7 @@
 <div>
-<%= form_with(model: [post, comment], url: post_comments_path(@post) ) do |f| %>
-    <div><%= f.text_area :comment, class: "input-mysize"%></div>
-    <div><%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %></div>
-<% end %>
+    <%= form_with(model: [post, comment], url: post_comments_path(@post) ) do |f| %>
+        <div><%= f.text_area :comment, class: "input-mysize"%></div>
+        <div><%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %></div>
+    <% end %>
 </div>
 
