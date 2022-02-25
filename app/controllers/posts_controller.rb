@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @maps = Map.all
   end
 
   def new
     @post = Post.new
+    @post.maps.build
   end
 
   def create
@@ -16,6 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    
   end
 
   def edit
@@ -34,7 +37,11 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  private
+
   def post_params
     params.require(:post).permit(:caption, :video, :user_id)
   end
+
+
 end

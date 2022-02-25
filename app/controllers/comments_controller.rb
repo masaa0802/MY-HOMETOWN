@@ -9,19 +9,16 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
-    @comment.save
+    if @comment.save
     render :index
-  end
-
-  def update
-    @comment.update!(comment_update_params)
-    render json: @comment
+    end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    if @comment.destroy
     render :index
+    end
   end
 
   private
